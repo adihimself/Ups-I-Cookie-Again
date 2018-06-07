@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<title>Ups I Cookie Again</title>
+	<style>
+		body,html {margin: 0;padding: 0;font-family: sans-serif;height: 100%;width: 100%;}
+		body {
+			background: #11998e;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		}
+		h1 {
+			text-align: center;
+			color: #fff;
+			text-transform: uppercase;
+			padding-top: 100px;
+			font-size: 60px;
+			margin: 0;
+		}
+
+		.copy {
+			width: 900px;
+			padding-left: 20px;
+			padding-right: 20px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			max-width: 100%;
+			margin: auto;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Ups I Cookie Again</h1>
+		<div class="copy">
+			<p>Butter, Backpulver und ein Ei schaumig verrühren. Anschließend Mehl und Puderzucker unterrühren und zu einem krümeligen Teig kneten. Den Teig abdecken und für 20 Minuten kühl stellen.</p>
+
+			<p>Den Teig ausrollen und mit Hilfe eines Tellers einen großen Kreis ausstechen. Mit einem Messer etwas oberhalb der Hälfte wellenartig einschneiden für die Augen. Den überschüssigen Teig entfernen und z. B. kleine Plätzchen damit backen. Auf einem mit Backpapier ausgelegten Backblech 15 - 20 Minuten bei 160 °C Umluft backen.</p>
+
+			<p>Den Frischkäse mit blauer Lebensmittelfarbe und dem Zucker zu einem gleichmäßigen Frosting vermischen und in einen Spritzbeutel mit Sterntülle geben. </p>
+
+			<p>Den weißen Fondant ausrollen und zwei runde Augen ausstechen, Schokoladenchips als Pupillen reindrücken.</p>
+
+			<p>Den fertig gebackenen und ausgekühlten Keks mit der Spekulatiuscreme bestreichen. Die Fondant-Augen auflegen und mit dem blauen Frosting den Bart aufspritzen sowie die Andeutung der Finger. Die restlichen Schokoladenchips auf der Spekulatiuscreme verteilen.</p>
+		</div>
+	</div>
+
+
+	<style>
+		.ae_cookie-hint {
+			display: none;
+			background: #fff;
+			color: #037469;
+			font-family: sans-serif;
+
+			position: fixed;
+			bottom: 20px;
+			left: 50%;
+			width: 1200px;
+			max-width: 90%;
+			padding: 15px;
+			border-radius: 5px;
+
+			-webkit-transform: translateX(-50%);
+			-ms-transform: translateX(-50%);
+			-o-transform: translateX(-50%);
+			transform: translateX(-50%);
+			
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flexbox;
+			display: -o-flex;
+			display: flex;
+
+			-webkit-flex-wrap: wrap;
+			-moz-flex-wrap: wrap;
+			-ms-flex-wrap: wrap;
+			-o-flex-wrap: wrap;
+			flex-wrap: wrap;
+			z-index: 9999;
+		}
+
+		.ae_cookie-hint__icon {
+			margin-right: 15px;
+			text-align: center;
+			font-size: 30px;
+			position: absolute;
+			left: 15px;
+			top: 50%;
+
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			-o-transform: translateY(-50%);
+			transform: translateY(-50%);
+		}
+
+		.ae_cookie-hint__text {
+			-webkit-flex: 1;
+			-moz-flex: 1;
+			-ms-flex: 1;
+			-o-flex: 1;
+			flex: 1;
+			padding-right: 25px;
+			font-size: 16px;
+			line-height: 1.4;
+		}
+
+		.ae_cookie-hint__text.with_icon {
+			padding-left: 45px;
+		}
+
+		.ae_cookie-hint a {
+			color: inherit;
+		}
+
+		.ae_cookie-hint__button {
+			background: #037368;
+			color: #fff;
+			border-radius: 5px;
+			padding: 13px 20px;
+			cursor: pointer;
+			-webkit-transition: 300ms all;
+			-o-transition: 300ms all;
+			transition: 300ms all;
+		}
+
+		.ae_cookie-hint__button:hover {
+			background: #141E30;
+			color: #fff;
+			-webkit-box-shadow: 0px 12px 21px -10px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 12px 21px -10px rgba(0,0,0,0.75);
+			box-shadow: 0px 12px 21px -10px rgba(0,0,0,0.75);
+		}
+
+		@media screen and (max-width: 830px) {
+			.ae_cookie-hint__buttonwrap {
+				width: 100%;
+				margin-top: 15px;
+			}
+
+			.ae_cookie-hint__text.with_icon + .ae_cookie-hint__buttonwrap {
+				padding-left: 45px;
+			}
+
+			.ae_cookie-hint__button {
+				display: inline-block;
+			}
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			if (getCookie('cookie_popup') == "true") {
+					$('.ae_cookie-hint').hide();
+			}
+
+			$('.ae_cookie-hint .ae_cookie-hint__button').click(function(event) {
+				$('.ae_cookie-hint').animate({bottom: -100, opacity: 0}, 500);
+				document.cookie = "cookie_popup=true; path=/";
+			});
+
+			function getCookie(cname) {
+				var name = cname + "=";
+				var ca = document.cookie.split(';');
+				for(var i = 0; i < ca.length; i++) {
+					var c = ca[i];
+					while (c.charAt(0) == ' ') {
+						c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {
+						return c.substring(name.length, c.length);
+					}
+				}
+				return "";
+			}
+		});
+	</script>
+	<div class="ae_cookie-hint">
+		<div class="ae_cookie-hint__icon">🍪</div>
+		<div class="ae_cookie-hint__text with_icon">
+			Wir verwenden Cookies, um unsere Website ständig verbessern zu können. Sie können unsere Website auch ohne Cookies nutzen, möglicherweise entstehen dadurch Einschränkungen. Lesen Sie auch unsere Hinweise zum <a href="/datenschutzerklaerung/">Datenschutz</a>.
+		</div>
+		<div class="ae_cookie-hint__buttonwrap"><div class="ae_cookie-hint__button">Einverstanden</div></div>
+	</div>
+</body>
+</html>
